@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Users\zheny\Documents\studentqa4\conf\application.conf,C:\Users\zheny\Documents\studentqa4\target\scala-2.11\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\zheny\Documents\studentqa4\conf\logback.xml,C:\Users\zheny\Documents\studentqa4\target\scala-2.11\classes\logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\zheny\Documents\studentqa4\conf\routes,C:\Users\zheny\Documents\studentqa4\target\scala-2.11\classes\routes)[0m

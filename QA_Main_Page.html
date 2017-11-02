@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		function POSTQA()
+		{
+			var url= "/QA/LoginQuestion"
+			var Question = document.getElementById("Question").value;
+			var Answer   = document.getElementById("Answer").value;
+			var params   = "[Question]="+Question+"&"+"[Answer]="+Answer;
+			var xhr      = new XMLHttpRequest();
+			xhr.open("POST",url,true);
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+			xhr.send(params);
+			alert("Adding New QA pair");
+			location.reload();
+			
+		}
+	</script>
+	<head>
+
+		<style>
+			header, footer {
+    				padding: 1em;
+    				color: white;
+				background-color: black;
+    				clear: left;
+    				text-align: center;
+			}
+			table, th, td {
+    				border: 1px solid black;
+   				border-collapse: collapse;
+			}
+			th, td {
+    				padding: 5px;    
+				text-align:left
+			}
+		</style>
+	</head>
+	<body>
+
+		<header>
+				<th>
+					<ADD_Headline>	
+				</th>
+		</header>
+		<article>
+		<table style="width:100%">
+			<tr>
+				<th>
+					<TASKID>
+				</th>
+				<th>
+					<form action = "/MainPage" method="get">
+						<input type="submit" value="back">
+					</form>
+				</th>
+				<th>
+					<form action = "/" method="get">
+						<input type="submit"  value="Sign Out">
+					</form>
+				</th>
+			</tr>
+			<ADD_Tuple>
+			<tr>
+				<td colspan="2">
+					<textarea rows="1" id="Question" style = "width:80%;text-align:left" >please enter your question here 
+					</textarea>
+					<br>
+					<textarea rows="4" id="Answer" style = "width:80%;text-align:left">please eneter your answer here 
+					</textarea>
+				</td>
+				<td>
+					<button style = "width:100%" id="SQA" onclick="POSTQA()">
+						Add Question
+					</button>
+
+				</td>
+			</tr>
+		</table>
+		</article>
+	</body>
+</html>

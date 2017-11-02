@@ -1,0 +1,31 @@
+@(emailaddress :String)
+<html>
+  <head>
+      <title>
+            <p><em>@emailaddress</em></p>
+      </title>
+  </head>
+  <script>
+		function POSTQA()
+		{
+			var url= "/IssuePassword"
+			var password = document.getElementById("password").value;
+			var xhr      = new XMLHttpRequest();
+			xhr.onreadystatechange = function()
+			{
+				if (xhr.readyState == 4) {
+					alter("your account have been active");
+			 	}
+		    }
+			xhr.open("POST",url,true);
+			xhr.setRequestHeader("Content-type",'application/json; charset=UTF-8');
+			var params= {"password":""};
+			params.password=password;
+			xhr.send(params);
+		}
+  </script>
+  <body>
+      <p>please enter your password to activate your account:</p>
+      <textarea id="password"></textarea>
+  </body>
+</html>

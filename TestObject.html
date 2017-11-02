@@ -1,0 +1,37 @@
+<script>
+     var object = {};
+     var responds= {};
+     function AddField()
+     {
+           var fieldName = document.getElementById("fieldName").value;
+           var fieldValue= document.getElementById("fieldValue").value;
+           object[fieldName] = fieldValue;
+           document.getElementById("Object").value = JSON.stringify(object);
+     }
+     function PostObject()
+     {
+           var Url = document.getElementById("fieldURL").value;
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function()
+           {
+                 document.getElementById("responds").value=xhr.responseText;
+           }
+           xhr.open("POST",Url,true);
+           xhr.setRequestHeader("Content-type",'application/json; charset=UTF-8');
+           xhr.send(JSON.stringify(object));
+     }
+</script>
+<body>
+     <p>The respoding Object</p>
+     <p><textarea id="responds" style="width:100%"></textarea></p>
+     <p>Current JSON Object</p>
+     <p><textarea id="Object" style="width:100%"></textarea></p>
+     <p>Enter the field Name</p>
+     <p><textarea id="fieldName" style="width:100%"></textarea></p>
+     <p>Enter the field Value</p>
+     <p><textarea id="fieldValue" style="width:100%"></textarea></p>
+     <p>Enter the URL </p>
+     <p><textarea id="fieldURL" style="width:100%"></textarea></p>
+     <button onclick="AddField();">Add Field value</button>
+     <button onclick="PostObject();">Post Object</button>
+</body>
